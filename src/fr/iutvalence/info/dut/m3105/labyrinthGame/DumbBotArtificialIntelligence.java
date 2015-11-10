@@ -20,6 +20,15 @@ public class DumbBotArtificialIntelligence implements RobotArtificialIntelligenc
 
 		return Action.MOVE_FORWARD;
 	}
+	
+	public DumbBotArtificialIntelligence clone(){
+		try {
+			return (DumbBotArtificialIntelligence) super.clone();
+		} catch (CloneNotSupportedException e) {		
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
+	}
 
 	@Override
 	public void notifyScanResult(int distancesToWallsInEachDirection)

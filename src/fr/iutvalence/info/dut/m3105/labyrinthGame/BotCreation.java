@@ -10,21 +10,21 @@ public interface BotCreation {
 	static RobotArtificialIntelligence makeBot(String intelligence) {
 
 		if (createdBots.containsKey(intelligence))
-			return createdBots.get(intelligence);
+			return createdBots.get(intelligence).clone();
 
 		switch (intelligence.toLowerCase()) {
 		case "dumb":
 			createdBots.put(intelligence, new DumbBotArtificialIntelligence());
-			return createdBots.get(intelligence);
+			return createdBots.get(intelligence).clone();
 
 		case "lesserdumb":
 			createdBots.put(intelligence,
 					new LesserDumbBotArtificialIntelligence());
-			return createdBots.get(intelligence);
+			return createdBots.get(intelligence).clone();
 
 		default:
 			createdBots.put(DEFAULT_BOT_TO_CREATE, new DumbBotArtificialIntelligence());
-			return createdBots.get(DEFAULT_BOT_TO_CREATE);
+			return createdBots.get(DEFAULT_BOT_TO_CREATE).clone();
 		}
 	}
 }

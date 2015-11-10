@@ -35,6 +35,15 @@ public class LesserDumbBotArtificialIntelligence implements RobotArtificialIntel
 
 		return Action.MOVE_FORWARD;
 	}
+	
+	public LesserDumbBotArtificialIntelligence clone(){
+		try {
+			return (LesserDumbBotArtificialIntelligence) super.clone();
+		} catch (CloneNotSupportedException e) {		
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
+	}
 
 	@Override
 	public void notifyScanResult(int distancesToWallsInEachDirection)
