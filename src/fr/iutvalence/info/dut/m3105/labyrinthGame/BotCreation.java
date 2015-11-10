@@ -1,16 +1,30 @@
 package fr.iutvalence.info.dut.m3105.labyrinthGame;
 
+import java.util.HashMap;
+
 public interface BotCreation {
 
-	static RobotArtificialIntelligence makeBot(String intelligence){
+	static HashMap<String, RobotArtificialIntelligence> createdBots = new HashMap<String, RobotArtificialIntelligence>();
+	static String DEFAULT_BOT_TO_CREATE = "dumb";
+
+	static RobotArtificialIntelligence makeBot(String intelligence) {
+
+		if (createdBots.containsKey(intelligence))
+			return createdBots.get(intelligence);
+
 		switch (intelligence.toLowerCase()) {
 		case "dumb":
-			return new DumbBotArtificialIntelligence();
+			createdBots.put(intelligence, new DumbBotArtificialIntelligence());
+			return createdBots.get(intelligence);
+
 		case "lesserdumb":
-			return new LesserDumbBotArtificialIntelligence();
+			createdBots.put(intelligence,
+					new LesserDumbBotArtificialIntelligence());
+			return createdBots.get(intelligence);
+
 		default:
-			return new DumbBotArtificialIntelligence();
+			createdBots.put(DEFAULT_BOT_TO_CREATE, new DumbBotArtificialIntelligence());
+			return createdBots.get(DEFAULT_BOT_TO_CREATE);
 		}
 	}
-
 }

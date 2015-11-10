@@ -1,6 +1,7 @@
 package fr.iutvalence.info.dut.m3105.labyrinthGame;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -26,6 +27,11 @@ public class TestLabyrinthGame
 		blockPositions.add(new Position(3,2));
 		blockPositions.add(new Position(3,3));
 		
-		new LabyrinthGame(new Labyrinth(4, 4, blockPositions, new Position(3,1)), BotCreation.makeBot("dumb")).play();
+		Scanner myScanner = new Scanner(System.in);
+		
+		System.out.println("How smart should be the bot ?");
+		new LabyrinthGame(new Labyrinth(4, 4, blockPositions, new Position(3,1)), BotCreation.makeBot(myScanner.nextLine())).play();
+		
+		myScanner.close();
 	}
 }
