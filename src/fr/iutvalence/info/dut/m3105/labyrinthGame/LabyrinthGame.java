@@ -7,7 +7,7 @@ package fr.iutvalence.info.dut.m3105.labyrinthGame;
  */
 public class LabyrinthGame
 {
-	private final Labyrinth labyrinth;
+	private final LabyrinthBuilder labyrinth;
 
 	private final RobotArtificialIntelligence robotAI;
 
@@ -17,7 +17,7 @@ public class LabyrinthGame
 
 	private int turnNumber;
 
-	public LabyrinthGame(Labyrinth labyrinth, RobotArtificialIntelligence robotAI)
+	public LabyrinthGame(LabyrinthBuilder labyrinth, RobotArtificialIntelligence robotAI)
 	{
 		this.labyrinth = labyrinth;
 		this.robotAI = robotAI;
