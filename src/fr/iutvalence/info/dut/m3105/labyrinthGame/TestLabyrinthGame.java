@@ -26,7 +26,7 @@ public class TestLabyrinthGame {
 					.addForbiddenPosition(new Position(0, 2))
 					.addForbiddenPosition(new Position(1, 2))
 					.addForbiddenPosition(new Position(3, 2))
-					.addForbiddenPosition(new Position(3, 3)),
+					.addForbiddenPosition(new Position(3, 3)).getLabyrinth(),
 					BotCreation.makeBot(myScanner.nextLine())).play();
 		} catch (HeightTooSmallException | WidthTooSmallException e) {
 			// this exception never happens

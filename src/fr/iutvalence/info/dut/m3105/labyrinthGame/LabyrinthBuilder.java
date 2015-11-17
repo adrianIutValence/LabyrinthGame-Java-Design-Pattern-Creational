@@ -56,6 +56,10 @@ public class LabyrinthBuilder {
 		}
 	}
 	
+	public Labyrinth getLabyrinth(){
+		return new Labyrinth(this.width, this.height, this.forbiddenCellsPositions, this.exitPosition);
+	}
+	
 	
 	public LabyrinthBuilder addForbiddenPositions(Set<Position> positions){
 		this.forbiddenCellsPositions.addAll(positions);
